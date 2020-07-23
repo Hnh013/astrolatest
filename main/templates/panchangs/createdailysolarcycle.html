@@ -1,0 +1,82 @@
+{% extends 'templating.html' %}
+
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron">
+<div class="container">
+<div class="card card-body">
+
+
+<form action="" method="POST">
+	
+	{% csrf_token %}
+	<div class="row">
+	  <div class="col-md-4">
+	    <hr>	
+	    <Label for="date"><h6>{{ form.date.label }}</h6>(YYYY-MM-DD)</Label>
+      <hr>  
+	    {{ form.date}}<br>
+      <br>
+      </div>
+    <div class="col-md-4">
+      <hr>  
+      <Label for="sunrise"><h6>{{ form.sunrise.label }}</h6>(HH-MM-SS)</Label>
+        <hr>
+      {{ form.sunrise}}<br>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <hr>  
+      <Label for="sunset"><h6>{{ form.sunset.label }}</h6>(HH-MM-SS)</Label>
+        <hr>
+      {{ form.sunset }}<br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <hr>  
+      <Label for="moonsign"><h6>{{ form.moonsign.label }}</h6></Label>
+        <hr>
+      {{ form.moonsign }}<br>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <hr>	
+	    <Label for="moonrise"><h6>{{ form.moonrise.label }}</h6>(HH-MM-SS)</Label>
+      <hr>
+	    {{ form.moonrise}}<br>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <hr>	
+	    <Label for="moonset"><h6>{{ form.moonset.label }}</h6>(HH-MM-SS)</Label>
+        <hr>
+	    {{ form.moonset}}<br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+    <hr>	
+	    <Label for="yoga"><h6>{{ form.ritu.label }}</h6></Label>
+        <hr><h6></h6>
+	    {{ form.ritu }}<br>
+    <br>
+    </div>
+    
+    </div>
+   
+    <input type="submit" name="Submit">
+</form>
+
+</div>
+</div>
+</div>
+{% endblock %}

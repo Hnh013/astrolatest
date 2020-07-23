@@ -1,0 +1,41 @@
+{% extends 'templating.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+<br><br><Br><Br><br>
+
+
+<div class="jumbotron">
+<div class="container">
+	
+	
+    <div class="row">
+    	<div class="col-sm-4">
+		<img src="{{ detail.profile.profile_pic.url }}" style="height: 200px; width:200px; border-radius: 50%">
+	    </div>
+	    <div class="col-sm-4">
+	    	
+			<p>{{ detail.profile.user.first_name }} {{ detail.profile.user.last_name }}</p>
+			<p><b>Skilled In :</b> {{ detail.skill }}</p>
+			<p><b>Languages :</b> {{ detail.language }}</p>
+			<p><b>About :</b>{{ detail.about }}</p>
+	    </div>
+	      <div class="col-sm-4">
+			<a class="btn btn-success" href="">Chat</a>
+			<hr>
+			<a class="btn btn-secondary" href=""><i class="fa fa-phone"></i> Call Now</a>
+			<hr>
+			<a class="btn btn-primary" href="">Meet up</a>
+			<hr>
+	    </div>
+	<br>
+	<hr>
+
+    <br><Br><BR>
+</div>
+
+</div>
+{% endblock %}

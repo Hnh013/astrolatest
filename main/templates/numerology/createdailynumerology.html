@@ -1,0 +1,52 @@
+{% extends 'templating.html' %}
+
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron">
+<div class="container">
+<div class="card card-body">
+
+
+<form action="" method="POST">
+	
+	{% csrf_token %}
+	<div class="row">
+	  <div class="col-md-6">
+	    <hr>	
+	    <Label for="number"><h6>{{ form.number.label }}</h6></Label>
+      <hr>  
+	    {{ form.number}}<br>
+      <br>
+      </div>
+    <div class="col-md-6">
+      <hr>  
+      <Label for="date"><h6>{{ form.date.label }}</h6>(YYYY-MM-DD)</Label>
+        <hr>
+      {{ form.date}}<br>
+      <br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+    <hr>	
+	    <Label for="content"><h6>{{ form.content.label }}</h6></Label>
+        <hr><h6></h6>
+	    {{ form.content }}<br>
+    <br>
+    </div>
+    </div>
+   
+    <input type="submit" name="Submit">
+</form>
+
+</div>
+</div>
+</div>
+{% endblock %}

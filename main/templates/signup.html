@@ -1,0 +1,81 @@
+
+{% extends 'templating.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+<br><br><br><br>
+<hr><hr>
+
+<p text-align="center"><h1> Sign Up, It's Free ! </h1></p>
+  <form method="post">
+      {% csrf_token %}
+      <div class="jumbotron">
+      <div class="row">
+          <div class="col-8">
+              <div class="row">
+                <div class="col-6">
+                  <h6><label for="first_name">First Name</h6>
+                    {{ form1.first_name|as_crispy_field }}
+                </div>
+                <div class="col-6">
+                  <h6><label for="first_name">Last Name</h6>
+                    {{ form1.last_name|as_crispy_field }}
+                </div>
+             </div>
+             
+             <div class="row">
+                <div class="col-6">
+                    {{ form1.username|as_crispy_field}}
+                </div>
+                <div class="col-6">
+                  <h6><label for="first_name">Email</h6>
+                    {{ form1.email|as_crispy_field }}
+                </div>
+             </div>
+             <div class="row">
+                 <div class="col-6">
+                   {{ form1.password1|as_crispy_field}}
+                 </div>
+                 <div class="col-6">
+                  {{ form1.password2|as_crispy_field }}
+                 </div>
+              </div>
+              <div class="row">
+                
+                <div class="col-6">
+                    
+                </div>
+             </div>
+             <p align="center">
+               <button type="submit" class='btn btn-success'>Sign up</button>
+               </p>
+          </div>
+          <div class='col-4'>
+            
+             <h2> Sign up and get free credits worth INR 100 in your wallet!</h2>
+            <hr>
+            <h3>Why Sign Up?</h3>
+            
+            <ul>
+              <li>It's Safe, as we respect you privacy</li>
+               <li>It's Free, we believe you have the right to know</li>
+                <li>Members get notified of all early offers</li>
+                 <li>Free credits worth INR 100 (non transferrable) in your wallet !</li>
+                 <li>Know you past, present and future to a precision of infinity</li>
+           </ul>
+            <br>
+            <h3>A few clicks to know the real you </h3>
+            <p> Still not convinced ? See <a href=""><u>here</u></a></p>
+
+            <hr>
+           
+          </div>
+          </div>
+      </div>
+  </form>
+
+
+	{% endblock %}

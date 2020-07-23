@@ -1,0 +1,76 @@
+{% extends 'templating.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron">
+<div class="container">
+<div class="card card-body">
+
+
+<form action="" method="POST">
+	
+	{% csrf_token %}
+	<div class="row">
+	  <div class="col-md-6">
+	  <hr>	
+	    <Label for="image"><h6>{{ form.image.label }}</h6></Label>
+        
+	    {{ form.image}}<br>
+      <br>
+      </div>
+  </div>
+     
+    
+    <div class="row">
+      <div class="col-md-3">
+      <hr>  
+      <Label for="zodiac"><h6>{{ form.zodiac.label }}</h6></Label>
+        <hr>
+      {{ form.zodiac }}<br>
+      <br>
+      </div>
+      <div class="col-md-3">
+      <hr>	
+	    <Label for="from_date"><h6>{{ form.from_date.label }}</h6>(YYYY/MM/DD)</Label>
+        <hr>
+	    {{ form.from_date}}<br>
+      <br>
+      </div>
+      <div class="col-md-3">
+      <hr>  
+      <Label for="to_date"><h6>{{ form.to_date.label }}</h6>(YYYY/MM/DD)</Label>
+        <hr>
+      {{ form.to_date}}<br>
+      <br>
+      </div>
+      <div class="col-md-3">
+      <hr>	
+	    <Label for="category"><h6>{{ form.category.label }}</h6></Label>
+        
+	    {{ form.category}}<br>
+      <br>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-12">
+    <hr>	
+	    <Label for="content"><h6>{{ form.content.label }}</h6></Label>
+        <hr><h6></h6>
+	    {{ form.content }}<br>
+    <br>
+    </div>
+    </div>
+   
+    <input type="submit" name="Submit">
+</form>
+
+</div>
+</div>
+</div>
+{% endblock %}

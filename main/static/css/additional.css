@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+.card-shadow {
+    -webkit-box-shadow: -1px 9px 20px rgba(0,0,0,0.15);
+    -moz-box-shadow: -1px 9px 20px rgba(0,0,0,0.15);
+    box-shadow:-1px 9px 20px rgba(0,0,0,0.15);
+}
+
+/* || Card Form */
+.card-form {
+    background-color: rgba(128,128,128,0.15);
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+@media screen and (max-width:768px) {
+    .card-form {
+        border-radius: 0px;
+    }
+}
+
+.signup-btn { border-radius: 50px; }
+input.form-small { height: 46px; }
+
+section {
+    padding: 50px 45px;
+}
+
+/* Section Heading */
+.section-heading {
+    color: #ff7600;
+}
+
+/* #7C7772 */
+/* || HOROSCOPE List */
+.horoscope:hover {
+    text-decoration: underline;
+}
+
+/* || SIGN UP Process */
+.contact-steps {
+    padding: 20px;
+    background-color: white;
+    border: 3px solid grey;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.steps-box {
+    line-height: 0.7;
+}

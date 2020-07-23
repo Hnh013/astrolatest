@@ -1,0 +1,34 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+
+
+{% block content %}	
+
+<br>
+<br>
+<br>
+<br>
+<hr>
+
+<div class="jumbotron">
+
+
+<form method="post" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+      <h2>Hey {{ user.username }} going so soon ?</h2>
+      <button class="btn btn-primary" type="submit">Sign Out
+      </button>
+</form>
+
+<h2>Done exploring ?</h2>
+
+<a class="btn btn-secondary" href="{% url 'index' %}" type="button">No, I'll explore a bit more!</a>
+
+</div>
+{% endblock %}

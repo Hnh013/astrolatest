@@ -1,0 +1,17 @@
+{% extends 'templating.html' %}
+{% load static %}
+    {% block metatag %}
+    <title>Astro Website</title>        
+    {% endblock %}
+
+{% block content %}
+<br><br><Br><BR><br>
+<h2>{{post.title}}</h2>
+  <div style="display:flex">
+  {% for tag in post.tags.all %}
+  <a href="{% url 'tagged' tag.slug %}" class="mr-1 badge badge-info">#{{ tag }}</a>
+  {% endfor %}
+  </div>
+<p>{{post.description}}</p>
+<p>{{post.published}}</p>
+{% endblock content %}   

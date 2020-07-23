@@ -1,0 +1,68 @@
+{% extends 'templating.html' %}
+
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron">
+<div class="container">
+<div class="card card-body">
+
+
+<form action="" method="POST">
+	
+	{% csrf_token %}
+	<div class="row">
+	  <div class="col-md-6">
+	    <hr>	
+	    <Label for="date"><h6>{{ form.date.label }}</h6>(YYYY-MM-DD)</Label>
+      <hr>  
+	    {{ form.date}}<br>
+      <br>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <hr>  
+      <Label for="shakasamwat"><h6>{{ form.shakasamwat.label }}</h6></Label>
+        <hr>
+      {{ form.shakasamwat }}<br>
+      <br>
+    </div>
+    <div class="col-md-6">
+      <hr>	
+	    <Label for="vikramsamwat"><h6>{{ form.vikramsamwat.label }}</h6></Label>
+      <hr>
+	    {{ form.vikramsamwat}}<br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+    <hr>	
+	    <Label for="monthamanta"><h6>{{ form.monthamanta.label }}</h6></Label>
+        <hr><h6></h6>
+	    {{ form.monthamanta }}<br>
+    <br>
+    </div>
+    <div class="col-md-6">
+    <hr>  
+      <Label for="monthpurnimanta"><h6>{{ form.monthpurnimanta.label }}</h6></Label>
+        <hr><h6></h6>
+      {{ form.monthpurnimanta }}<br>
+    <br>
+    </div>
+    
+  </div>
+   
+    <input type="submit" name="Submit">
+</form>
+
+</div>
+</div>
+</div>
+{% endblock %}

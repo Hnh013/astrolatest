@@ -1,0 +1,88 @@
+{% extends 'templating.html' %}
+
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron">
+<div class="container">
+<div class="card card-body">
+
+
+<form action="" method="POST">
+	
+	{% csrf_token %}
+	<div class="row">
+	  <div class="col-md-6">
+	    <hr>	
+	    <Label for="date"><h6>{{ form.date.label }}</h6>(YYYY-MM-DD)</Label>
+      <hr>  
+	    {{ form.date}}<br>
+      <br>
+      </div>
+    <div class="col-md-6">
+      <hr>  
+      <Label for="tithi"><h6>{{ form.tithi.label }}</h6></Label>
+        <hr>
+      {{ form.tithi}}<br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <hr>  
+      <Label for="nakshatra"><h6>{{ form.nakshatra.label }}</h6></Label>
+        <hr>
+      {{ form.nakshatra }}<br>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <hr>	
+	    <Label for="karana"><h6>{{ form.karana.label }}</h6></Label>
+      <hr>
+	    {{ form.karana}}<br>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <hr>	
+	    <Label for="paksha"><h6>{{ form.paksha.label }}</h6></Label>
+        <hr>
+	    {{ form.paksha}}<br>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+    <hr>	
+	    <Label for="yoga"><h6>{{ form.yoga.label }}</h6></Label>
+        <hr><h6></h6>
+	    {{ form.yoga }}<br>
+    <br>
+    </div>
+    <div class="col-md-4">
+    <hr>  
+      <Label for="yoga_till"><h6>{{ form.yoga_till.label }}</h6></Label>
+        <hr><h6></h6>
+      {{ form.yoga_till }}<br>
+    <br>
+    </div>
+    <div class="col-md-4">
+    <hr>  
+      <Label for="day"><h6>{{ form.day.label }}</h6></Label>
+        <hr><h6></h6>
+      {{ form.day }}<br>
+    <br>
+    </div>
+    </div>
+   
+    <input type="submit" name="Submit">
+</form>
+
+</div>
+</div>
+</div>
+{% endblock %}

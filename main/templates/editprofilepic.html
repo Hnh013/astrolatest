@@ -1,0 +1,40 @@
+
+{% extends 'templating.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr>
+<hr><hr><hr><hr>
+
+<div class="jumbotron">
+<div class="row">
+
+	<div class="col-sm-3">
+		<br><br><br>
+		<p align="center"><img src="{{ user.profile.profile_pic.url }}" style="height: 200px; width: 200px; border-radius: 50%;"></p>
+	</div>
+    <div class="col-sm-9">
+        <div class="card card-body">
+        <form action="" method="POST" enctype="multipart/form-data">
+	    {% csrf_token %}
+	    <hr>	
+	    <Label for="profile_pic"><h6>{{ form.profile_pic.label }}</h6></Label>
+        <hr>
+	    {{ form.profile_pic}}<br>
+        <br>
+	    <Label for="user_role"><h6>{{ form.user_role.label }}</h6></Label>
+	    {{ form.user_role }}
+	    <hr><br>
+
+
+        <button type="submit">Submit</button>
+        </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

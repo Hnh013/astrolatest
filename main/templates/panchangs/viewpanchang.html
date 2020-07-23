@@ -1,0 +1,101 @@
+{% extends 'templating.html' %}
+
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron">
+	<h1 align="center">PANCHANG</h1><br><hr>
+<div class="container">
+<div class="card card-body">
+
+<p>
+	<br><br>
+A Kundli or Birth Horoscope is an Astrological Chart, created on the basis of the exact birth date, time and place of an individual. When we call this Chart a Kundli, we are essentially referring to a Personal Horoscope, created using the Vedic Astrology System. This Chart denotes the positions of the various planets, including the Sun, Moon, astrological aspects and significant angles, at the time of one's birth. A Kundli is often prepared by a proficient astrologer to gain insights into an individual's personality, potential, past, present and future. Other commonly used terms for Kundli are Janam Kundli, Janampatri, Natal Chart, Birth Horoscope, Birth Chart etc. In India it's essential to match kundali of  male and female partners before fixing their marriage to check weather bride and groom are compatible with each other astrologically by verifying 36 gunas. 
+<br><Br>
+An astrologer determines the local mean time at the place of birth, in order to calculate the Ascendant or the rising Sign of the native. Thereafter, the Kundli is divided into 12 Houses. The first House starts with the Ascendant, and all the other Houses are numbered in an anti-clockwise direction. The position of these Houses always remain fixed in a person's Kundli. Whereas, the various Signs and planets move through the twelve Houses for specific periods—this is best understood and analysed by astrologers trained and educated in Astrology. Besides, all the planets move through the different Signs, over the course of days, weeks, months or years in a person's life-span. Each House in a Kundli represents a certain aspect, relationship or area of the life, and the planets' placement in these Houses is indicative of various events, happenings and possibilities. Thus, using and interpreting this information, by applying the time tested principles and research of Vedic Astrology, Astrologers can provide predictions for an individual, as per planetary positions and planetary movements in his/her Kundli.
+<br><br>
+<strong>How is your Kundli helpful?</strong>
+Precise birth date, time and location are essential to properly create and interpret your Kundli. An astrologer can study your Kundli to predict your future, and guide you to improve your life. By applying the suggested remedies by an astrologer, basis your Chart, you can overcome or decrease the intensity of many of your problems. Your Kundli also tends to explains in detail about your nature, character, finances, career, health, intelligence, relationships and several other aspects of your life. Your Kundli will also help you discover the most suitable academic field and profession for you to achieve desired success in the life. You can also know about your lucky planets, lucky days, colours, lucky numbers and most importantly, your strengths and weaknesses. Your Kundli can tell you in advance about the most opportune and unfavourable time frames in your life. Hence, Vedic Astrology helps you to make the most of your life, by providing a deep insight about various events of your life.
+<br><br>
+
+
+
+
+ </Br></p></div></div></div>
+
+<div class="container">
+	<p> <h6>Today Panchang</h6>
+	<table class="table table-striped">
+	{% for tp in today_panchang %}
+	<tr><td>Tithi</td><td>{{ tp.tithi }}</td></tr>
+	<tr><td>Karana</td><td>{{ tp.karana }}</td></tr>
+	<tr><td>Paksha</td><td>{{ tp.paksha }}</td></tr>
+	<tr><td>Nakshatra</td><td>{{ tp.nakshatra }}</td></tr>
+	<tr><td>Yoga</td><td>{{ tp.yoga }}</td></tr>
+	<tr><td>Yoga till</td><td>{{ tp.yoga_till}}</td></tr>
+	<tr><td>Day</td><td>{{ tp.day }}</td></tr>
+	{% endfor %}
+	</table>
+	
+
+</p>
+</div>
+
+<div class="container">
+	<p> <h6>Today SolarCycle</h6>
+	<table class="table table-striped">
+	{% for tsc in today_solar_cycle %}
+	<tr><td>Sunrise</td><td>{{ tsc.sunrise }}</td></tr>
+	<tr><td>sunset</td><td>{{ tsc.sunset }}</td></tr>
+	<tr><td>moonsign</td><td>{{ tsc.moonsign }}</td></tr>
+	<tr><td>Moonrise</td><td>{{ tsc.moonrise }}</td></tr>
+	<tr><td>Moonset</td><td>{{ tsc.moonset }}</td></tr>
+	<tr><td>Ritu</td><td>{{ tsc.ritu}}</td></tr>
+	{% endfor %}
+	</table>
+	
+
+</p>
+</div>
+
+
+<div class="container">
+	<p> <h6>Today Hindu Month Year</h6>
+	<table class="table table-striped">
+	{% for hmy in today_hindu_month_year %}
+	<tr><td>Shakasamwat</td><td>{{ hmy.shakasamwat }}</td></tr>
+	<tr><td>VikramSamwat</td><td>{{ hmy.vikramsamwat }}</td></tr>
+	<tr><td>Monthamanta</td><td>{{ hmy.monthamanta }}</td></tr>
+	<tr><td>Month Purnimanta</td><td>{{ hmy.monthpurnimanta }}</td></tr>
+	{% endfor %}
+	</table>
+	
+
+</p>
+</div>
+
+<div class="container">
+	<p> <h6>Today Hindu Month Year</h6>
+	<table class="table table-striped">
+	{% for tt in today_timings %}
+	<tr><td>RAhu From</td><td>{{ tt.rahu_from }}</td></tr>
+	<tr><td>Rahu To</td><td>{{ tt.rahu_to }}</td></tr>
+	<tr><td>Yama From</td><td>{{ yama.rahu_from  }}</td></tr>
+	<tr><td>Yama to</td><td>{{ tt.yama_to }}</td></tr>
+	<tr><td>Gulika From</td><td>{{ tt.gulika_from}}</td></tr>
+	<tr><td>Gulika To</td><td>{{ tt.gulika_to }}</td></tr>
+	<tr><td>Abhi From</td><td>{{ tt.abhi_from }}</td></tr>
+	<tr><td>Abhi to</td><td>{{ tt.abhi_to }}</td></tr>
+
+	{% endfor %}
+	</table>
+	
+
+</p>
+</div>
+ {% endblock %}

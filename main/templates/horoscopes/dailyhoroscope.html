@@ -1,0 +1,130 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr>
+
+
+
+
+<div class=row>
+	<div class="col-sm-4">
+<h1 align="center">SAME CATEGORY HOROSCOPE</h1>
+{% for sch in sim_cate_horo %}
+<div class="card-body" style="max-width: 18rem;">
+  <p align="center"><img src="{{ sch.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p class="card-title" align="center">{{ sch.zodiac }} {{ sch.category }} Horoscope </p>
+    <p class="card-text" align="center">for {{ sch.date }}</p>
+    <p class="card-text">{{ sch.content|truncatechars:90 }}</p>
+    <p align="center"><a href="{% url 'viewdailyhoroscope' sch.id %}" class="btn btn-primary btn-sm">View full Horoscope</a></p>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<div class="col-sm-8">
+	
+<div >
+  <p align="center"><img src="{{ horoscope.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p align="center">{{ horoscope.zodiac }} {{ horoscope.category }} Horoscope </p>
+    <p align="center">for {{ horoscope.date }}</p>
+    <p>{{ horoscope.content }}</p>
+  </div>
+</div>
+    
+</div>
+</div>
+<hr>
+<div class="container">
+<h2>Comments</h2>
+<div class="row">
+  <div class="col-md-2">image</div>
+  <div class="col-md-10">comment</div>
+
+
+</div>
+<hr>
+
+
+
+
+</div>
+
+<hr>
+<h1 align="center"> SAME DATE HOROSCOPES</h1>
+  <h3 align="center"> More Horoscopes for the date {{ horoscope.date }}</h3>
+  <hr>
+<section class="lst">
+  <div class="container">
+          <div class="owl-carousel" id="list-slide">
+
+{% for sdh in sim_date_horo %}
+<div class="card-body" style="max-width: 18rem;">
+  <p align="center"><img src="{{ sdh.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p class="card-title" align="center">{{ sdh.zodiac }} {{ sdh.category }} Horoscope </p>
+    <p class="card-text" align="center">for {{ sdh.date }}</p>
+    <p class="card-text">{{ sdh.content|truncatechars:90 }}</p>
+    <p align="center"><a href="{% url 'viewdailyhoroscope' sdh.id %}" class="btn btn-primary btn-sm">View full Horoscope</a></p>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+</section>
+
+<hr>
+<p align ="center">
+<h1 align="center"> SAME ZODIAC HOROSCOPES</h1>
+  <h3 align="center"> More Horoscopes for the sign {{ horoscope.zodiac }} for {{ horoscope.date }}</h3></p>
+  <hr>
+  <div class="row">
+          
+
+{% for szh in sim_zodi_horo %}
+<div class="col-sm-3">
+<div class="card-body" style="max-width: 18rem;">
+  <p align="center"><img src="{{ szh.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p class="card-title" align="center">{{ szh.zodiac }} {{ szh.category }} Horoscope </p>
+    <p class="card-text" align="center">for {{ szh.date }}</p>
+    <p class="card-text">{{ szh.content|truncatechars:90 }}</p>
+    <p align="center"><a href="{% url 'viewdailyhoroscope' szh.id %}" class="btn btn-primary btn-sm">View full Horoscope</a></p>
+  </div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+<h3>ARIES WEEKLY HOROSCOPE</h3>    
+<div>
+  {% for swh in sim_week_horo %}
+<div class="card-body" style="max-width: 18rem;">
+  <p align="center"><img src="{{ swh.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p class="card-title" align="center">{{ swh.zodiac }} {{ swh.category }} Horoscope </p>
+    <p class="card-text" align="center">for {{ swh.from_date }} to {{ swh.to_date }}</p>
+    <p class="card-text">{{ swh.content|truncatechars:90 }}</p>
+    <p align="center"><a href="{% url 'viewweeklyhoroscope' swh.id %}" class="btn btn-primary btn-sm">View full Horoscope</a></p>
+  </div>
+</div>
+</div>
+  {% endfor %}
+</div>
+</div>
+<hr>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

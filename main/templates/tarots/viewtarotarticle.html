@@ -1,0 +1,27 @@
+{% extends 'templating.html' %}
+
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr><hr>
+  <p align="center">{% for articl in article %}</p>
+  <hr>
+
+<h1 align="center">{{ articl.title }}</h1>
+
+<hr>
+ <p align="center">
+  <a href="{% url 'edittarotarticle' articl.id %}" class="btn btn-success btn-sm">Edit Article</a>
+    <a href="{% url 'deletetarotarticle' articl.id %}" class="btn btn-warning btn-sm">Delete Article</a>
+</p>
+<Hr>
+<p>Published on {{articl.date}} by <strong>{{ articl.astroprofile }}</strong></p>
+<p>{{ articl.content }}</p>
+{% endfor %}
+
+
+
+{% endblock %}

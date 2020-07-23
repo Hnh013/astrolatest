@@ -1,0 +1,67 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr>
+<hr><hr><hr><hr>
+<div class="jumbotron">
+<div class="container">
+<div class="card card-body">
+
+
+<form action="" method="POST">
+	{% csrf_token %}
+	<div class="row">
+	  <div class="col-md-6">
+	  <hr>	
+	    <Label for="skill"><h6>{{ form.skill.label }}</h6></Label>
+        
+	    {{ form.skill}}<br>
+      <br>
+      </div>
+      <div class="col-md-6">
+      <hr>	
+	    <Label for="experience"><h6>{{ form.experience.label }}</h6></Label>
+        
+	    {{ form.experience }}<br>
+      <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      <hr>	
+	    <Label for="location"><h6>{{ form.location.label }}</h6></Label>
+        
+	    {{ form.location}}<br>
+      <br>
+      </div>
+      <div class="col-md-6">
+      <hr>	
+	    <Label for="about"><h6>{{ form.about.label }}</h6></Label>
+        
+	    {{ form.about}}<br>
+      <br>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+    <hr>	
+	    <Label for="language"><h6>{{ form.language.label }}</h6></Label>
+        <hr><h6>Choose any two</h6>
+	    {{ form.language }}<br>
+    <br>
+    </div>
+    </div>
+
+
+      <button type="submit">Submit</button>
+</form>
+
+</div>
+</div>
+</div>
+
+{% endblock %}

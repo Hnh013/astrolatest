@@ -1,0 +1,49 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr>
+<hr><hr><hr><hr>
+<div class="jumbotron">
+ 
+		
+
+
+        <form action="" method="POST">
+
+	    {% csrf_token %}
+	     <div class="row">
+	       <div class="col-md-6">
+	         <h6><label for="username">{{ form.username.label }}</label></h6>
+             {{ form.username }}
+           </div>
+           <div class="col-md-6">
+	         <h6><label for="email">{{ form.email.label }}</label></h6>
+             {{ form.email }}
+           </div>
+	     </div>
+	     <br><br>
+	     <div class="row">
+	       <div class="col-md-6">
+	         <h6><label for="first_name">{{ form.first_name.label }}</label></h6>
+             {{ form.first_name }}
+           </div>
+	       <div class="col-md-6">
+	         <h6><label for="last_name">{{ form.last_name.label }}</label></h6>
+             {{ form.last_name }}
+           </div>
+	     </div>
+	    <hr><br>
+
+	    <button type="submit">Submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

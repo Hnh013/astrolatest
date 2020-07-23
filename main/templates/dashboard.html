@@ -1,0 +1,158 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<style>
+    .profile{
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+</style>
+
+
+{% if user.is_authenticated %}
+    {% if user.profile.user_role == 'Customer' or user.profile.user_role == 'Astrologer' %}
+
+    <hr><hr><hr><hr> <hr><hr><hr><hr>
+        <h1 align="center"><small> Welcome {{user.first_name}} {{ user.last_name }}</small></h1>
+
+  <div class="jumbotron" >
+    <div class="container">
+      <div class="row" >
+        
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+          <p> <img src="{{user.profile.profile_pic.url}}" class="profile">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a class="btn btn-success btn-sm" href="{% url 'updateprofilepic' %}">Upload new Picture</a>
+            
+            </div>
+          </p>
+        </div> 
+            
+        <br>
+            
+        <div class="col-sm-8" style="background-color:#fff; text-align: center">
+          <h1>Keep Booking</h1>
+          <h1>Your wallet balance is : INR {{ user.wallet.balance }}</h1>
+            <br>
+                <a href="{% url 'recharge' %}" class="btn btn-primary btn-sm" >Recharge Wallet</a>
+                        
+                  
+        </div>
+      </div>         
+    </div>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+        </div>
+
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+          <table class="table table-striped">
+            <tr><td><strong>First Name       </strong></td><td>{{ user.first_name }}</td></tr>
+            <tr><td><strong>Last Name        </strong></td><td>{{ user.last_name }}</td></tr>
+            <tr><td><strong>Email      </strong></td><td>{{ user.email }}</td></tr>
+          </table>
+          <p align="center"> <a style="border-radius: 15%;"class="btn btn-primary" href="{% url 'updateprofile' %}">Update Profile</a></p>
+        </div>
+
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% if user.profile.user_role == 'Astrologer' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'createdailyhoroscope' %}" class="btn btn-primary">Create daily Horoscope</a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'createweeklyhoroscope' %}" class="btn btn-primary">Create Weekly Horoscope</a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'createmonthlyhoroscope' %}" class="btn btn-primary">Create Monthly Horoscope</a>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'createyearlyhoroscope' %}" class="btn btn-primary">Create Yearly Horoscope</a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'createdailypanchang' %}" class="btn btn-primary">Create Daily Panchang</a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'createdailysolarcycle' %}" class="btn btn-primary">Create Daily solar Cycle</a>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-md-4">
+      <a href="{% url 'createyearlyhoroscope' %}" class="btn btn-primary">Create Yearly Horoscope</a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'createdailypanchang' %}" class="btn btn-primary">Create Daily Panchang</a>
+    </div>
+    <div class="col-md-4">
+      <a href="{% url 'createdailysolarcycle' %}" class="btn btn-primary">Create Daily solar Cycle</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+          <h2>Skills</h2> 
+			      <table class="table table-sm">
+               {{ user.profile.astro_profile.skill }} 			        
+			      </table>
+			  </div>
+			  
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+          	   <h2>About</h2>
+          	   {{ user.profile.astro_profile.about }}
+        </div>
+			  
+        <div class="col-sm-4" style="background-color:#fff; text-align: center">
+          		<h2>languages</h2>			
+              <table class="table table-sm">
+									{% for i in user.profile.astro_profile.language %}
+									<tr><td>{{ i }}</td></tr>
+									{% endfor %}
+							</table>
+
+									
+			  </div>
+	    </div>
+	  </div>
+  </div>		
+
+<p align="center"><a class="btn btn-primary btn-sm" href="{% url 'createastroprofile' %}">Create Your Astrloger Profile</a></p>
+<p align="center"><a class="btn btn-warning btn-sm" href="{% url 'updateastroprofile' %}">Edit Your Astrloger Profile</a></p>
+
+{% endif %}
+{% else %}
+<hr><hr><hr><hr><hr><hr><hr>
+<div class="jumbotron">
+Hey {{ user.username }} Complete Your Profile <a href="{% url 'completeprofile' %}"><u>here</u></a>
+</div>			
+{% endif %}
+				
+    {% else %}
+    <h1>LOGIN FIRST!!</h1>
+    {% endif %}
+
+	{% endblock %}

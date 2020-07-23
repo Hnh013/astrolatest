@@ -1,0 +1,390 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+	<!-- =========================== Card ============================================ -->
+	<section class="cta center-bg pt-80 " style="background: url(assets/img/main_background.jpg)no-repeat">
+		<div class="finding-overlay op-70"></div>
+		<div class="container pt-80">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 col-md-10">
+					<div class="cta-sec text-center">
+						<h1>When will I find the right partner?</h1>
+						<p>No payment required, jump to get started.</p>
+						<a href="{% url 'astrosearch' %}" class="btn btn-cta">Talk to Astrologers</a>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</section>
+	<div class="container">
+		<div class="card card-shadow" style="width: 100%;">
+			<div class="card-body py-0">
+			  	<div class="row">
+					<div class="col-lg-3 px-4 py-3">
+						<p class="h5">Sign Up for Free & Consult your favorite Astrologer</p>
+					</div>
+					<div class="col-lg-6 card-form px-lg-5 pt-4 pb-2">
+						<div class="form-group my-auto">
+							<div class="row">
+								<input type="text" class="form-control form-small col-3 mr-2" value="91 (IN)" readonly>
+								<input type="number" class="form-control form-small col-8" value="" placeholder="Mobile No">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 px-4 pt-3 pb-2">
+						<div class="form-group">
+							<input type="button" value="Sign Up" class="btn theme-btn w-100 font-14 signup-btn" />
+						</div>
+						<p class="font-14 text-center"><small>Already Registered? <a href="#" class="link">Login</a></small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- =========================== Different Kundali ============================================ -->
+	<section>
+		<div class="container p-sm">
+			<p class="h1 text-center">FREE DAILY <span class="section-heading">HOROSCOPES</span></p>
+			<div class="row mt-5">
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/aries.svg' %}" width="60px" class="d-block mx-auto" alt="Aries">
+						<span class="text-center d-block mt-3">Aries</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/taurus.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Tauras</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/gemini.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Gemini</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/cancer.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Cancer</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/leo.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Leo</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/virgo.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Virgo</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/libra.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Libra</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/scorpio.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Scorpio</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/sagittarius.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Sagittarius</span>
+					</a> 
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/capricorn.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Capricorn</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/aquarius.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Aquarius</span>
+					</a>
+				</div>
+				<div class="col-lg-1 col-4">
+					<a href="#" class="horoscope"><img src="{% static 'img/horoscopes/pisces.svg' %}" width="60px" class=" d-block mx-auto" alt="">
+						<span class="text-center d-block mt-3">Pisces</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!-- =========================== ONLINE ASTROLOGERS ============================================ -->
+	<section>
+		<div class="container p-sm mt-5">
+			<p class="h1 text-center">ONLINE <span class="section-heading">ASTROLOGERS</span></p>
+			<hr class="w-100">
+			<div class="row mt-5 font-3 steps-box border">
+				<div class="col-md-3 col-sm-6 col-12 ">
+					<div class="contact-steps mx-auto w-50">
+						<img src="{% static 'img/contactProcedure/person.svg' %}" width="40px" class="d-block mx-auto" alt="Person">
+					</div>
+					<div class="text-center">
+						<p class="mt-4 font-weight-bold">1. Sign Up</p>
+						<p class="text-secondary">with Horoscope</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12">
+					<div class="contact-steps mx-auto w-50">
+						<img src="{% static 'img/contactProcedure/pay.svg' %}" width="40px" class="d-block mx-auto" alt="Person">
+					</div>
+					<div class="text-center">
+						<p class="mt-4">2. Put money in your</p>
+						<p class="text-secondary font-weight-bold">with Horoscope</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12">
+					<div class="contact-steps mx-auto w-50">
+						<img src="{% static 'img/contactProcedure/businessman.svg' %}" width="40px" class="d-block mx-auto" alt="Person">
+					</div>
+					<div class="text-center">
+						<p class="mt-4"><span class="font-weight-bold">3. Click on</span> to <span class="font-weight-bold">call</span> and add to <span class="font-weight-bold">chat</span>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12">
+					<div class="contact-steps mx-auto w-50">
+						<img src="{% static 'img/contactProcedure/thumbs-up.svg' %}" width="40px" class="d-block mx-auto" alt="Person">
+					</div>
+					<div class="text-center">
+						<p class="mt-4"><span class="font-weight-bold">4. Rate & Review</span> astrologer </p>
+						<p class="">after consultation</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="list-grid-layout classical-layout">
+						<div class="grid-layout-body">
+							<div class="gl-list-author">
+								<a data-toggle="tooltip" data-original-title="Author Name" href="author-detail.html"><img src="{% static 'img/astrologers/astro-nageswara.jpg' %}" alt="astro-nageswara"></a>
+							</div>
+							<div class="gl-list-caption">
+								<h4><a href="listing-detail.html" class="list-title">Astro Nageswara</a></h4>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/language.svg' %}" width="20px;"> English, Telugu</p>
+								<p class="gl-tagline"><img src="{% static 'img/astrologers/achivment.svg' %}" width="20px;"> Vedic Astrology</p>
+							</div>
+						</div>
+						<div class="grid-layout-footer">
+							<div class="ft-loke">
+								<i class="fas fa-rupee-sign" width="10px;"></i> 12/Min<br>
+								<i class="fas fa-graduation-cap" width="10px;"></i> 14 Years
+							</div>
+							<div class="box">
+								<div class="cat-icon-box rounded-circle cbg-5">
+									<a href=""><i class="fas fa-phone-volume cbg-9"></i></a>
+								</div>
+								<div class="cat-icon-box rounded-circle cbg-8">
+									<a href=""><i class="fas fa-comment-dots cbg-9"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>					
+	{% endblock %}

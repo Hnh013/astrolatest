@@ -1,0 +1,31 @@
+
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr>
+<hr><hr><hr><hr>
+<div class="jumbotron">
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-body">
+
+      <h2> Just complete this minor step and we have a gift waiting fotr you :) </h2>
+      <form action="" method="POST">
+	  {% csrf_token %}
+	  <br>
+	  User Role :{{ form1.user_role }}<br>
+	  {{ form2 }}
+	  <hr><br>
+	  <button type="submit">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,82 @@
+{% extends 'templating.html' %}
+{% load static %}
+	{% block metatag %}
+	<title>Astro Website</title>		
+	{% endblock %}
+	{% block content %}	
+
+<hr><hr><hr><hr><hr><hr>
+
+<div class="jumbotron" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-sm-2">
+       
+      </div>
+      <div class="col-sm-8">
+    <h1 align="center">HOROSCOPES</h1>
+
+    <hr>
+    <p align ="center" >Quisque dolor est, dictum at nisl placerat, fermentum blandit elit. Cras at nulla auctor ante tincidunt condimentum. Nullam finibus purus nec vulputate sodales. Nam ultrices nisi magna, ultrices porta ipsum interdum ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum et ante posuere varius. Duiis porta metus nulla, vitae viverra nisi dignissim non. Pellentesque tincidunt lorem molestie tempor fringilla. Nullam cursus dapibus tempus. Cras est nulla, consectetur eu lacinia ac, luctus id tortor. Integer a dictum lectus. Donec vitae ipsum sed mauris tempus bibendum a ac arcu.
+
+Aenean euismod tincidunt mattis. Quisque ac vehicula sem. Ut ornare tristique justo elementum laoreet. Quisque ut cursus diam. Donec nibh nunc, placerat in egestas sit amet, consequat ut justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis fermentum magna auctor aliquam. Sed at massa at odio elementum placerat sed in purus. Suspendisse eget pretium tellus. Nulla fringilla euismod dui nec sodales. Aliquam turpis nisl, tincidunt a rutrum quis, egestas non massa. Proin vel facilisis orci. Aliquam et velit vel nulla ultrices elementum eget nec lectus. Phasellus in urna ac ante faucibus varius sed tempus dui. Suspendisse a erat eget justo mollis mollis vel nec dolor.
+
+
+Donec bibendum vestibulum ligula non consequat. Maecenas vel nisl elementum justo vestibulum maximus. Nunc aliquet nibh in nisi feugiat, sit amet iaculis elit aliquam. Donec ullamcorper est mauris, vel tincidunt elit lacinia a. Phasellus et felis accumsan, viverra odio vel, lobortis odio. Vivamus egestas lorem eu augue varius rutrum. Pellentesque in ligula in enim congue aliquet. Nullam at orci ipsum. Donec feugiat sollicitudin justo. Mauris vel nulla at eros euismod aliquam a sit amet sem. Sed ac scelerisque odio.</p>
+ </div>
+<div class="col-sm-2">
+       
+      </div>
+</div>
+
+  </div>
+</div>
+
+
+<hr>
+<h1 align="center"> FREE HOROSCOPE FOR TODAY </h1>
+<hr>
+
+        <div class="container">
+        
+
+{% for tnh in today_normal_horo %}
+<div class="card-body" style="max-width: 18rem;">
+  <p align="center"><img src="{{ tnh.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p class="card-title" align="center">{{ tnh.zodiac }} {{ tnh.category }} Horoscope </p>
+    <p class="card-text" align="center">for {{ tnh.date }}</p>
+    <p class="card-text">{{ tnh.content|truncatechars:100 }}</p>
+    <p align="center"><a href="{% url 'viewdailyhoroscope' tnh.id %}" class="btn btn-primary btn-sm">View full Horoscope</a></p>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+
+<hr>
+<h1 align="center"> FREE HOROSCOPE FOR TOMORROW </h1>
+<hr>
+
+<section>
+  <div class="row">
+    {% for tomnh in tomo_normal_horo %}
+     <div class="col-sm-3">
+      <div class="card-body" style="max-width: 18rem;">
+  <p align="center"><img src="{{ tomnh.image.url }}" style="height: 100px; width: 100px; border-radius: 50%;"></p>
+  <div>
+    <p class="card-title" align="center">{{ tomnh.zodiac }} {{ tomnh.category }} Horoscope </p>
+    <p class="card-text" align="center">for {{ tomnh.date }}</p>
+    <p class="card-text">{{ tomnh.content|truncatechars:100 }}</p>
+    <p align="center"><a href="{% url 'viewdailyhoroscope' tomnh.id %}" class="btn btn-primary btn-sm">View full Horoscope</a></p>
+  </div>
+</div>
+
+
+
+     </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}
