@@ -210,7 +210,7 @@ pycryptodome==3.9.8
 pycurl==7.43.0.2
 pydotplus==2.0.2
 pyflakes==2.0.0
-Pygments==2.3.1
+Pygments==2.7.4
 pygubu==0.10
 PyInstaller==3.6
 pylint==2.2.2
